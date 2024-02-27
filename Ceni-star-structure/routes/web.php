@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\ProviderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FilmController;
+use App\Http\Controllers\PdfController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,8 +18,9 @@ use App\Http\Controllers\FilmController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
 Route::get('/home', [FilmController::class, 'search'])->name('films.search');
 
 Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect']);
@@ -33,4 +36,22 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+
+Route::get('/index', function () {
+    return view('index');
+});
+Route::get('/dash', function () {
+    return view('dash-admin');
+});
+Route::get('/mail', function () {
+    return view('myTestMail');
+});
+
+
+Route::get('/email', [PdfController::class, 'index']);
+
+
+
+
+
+require __DIR__ . '/auth.php';
