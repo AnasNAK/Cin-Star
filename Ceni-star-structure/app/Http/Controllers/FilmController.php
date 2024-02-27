@@ -10,7 +10,7 @@ class FilmController extends Controller
     public function search(Request $request)
 {
     $searchData = $request->input('search');
-    $films = Film::where('name', 'like', '%' . $searchData . '%')
+    $film = Film::where('name', 'like', '%' . $searchData . '%')
                  ->orWhereHas('genre', function ($query) use ($searchData) {
                      $query->where('name', 'like', '%' . $searchData . '%');
                  })
@@ -22,7 +22,7 @@ class FilmController extends Controller
                  })
                  ->get();
 
-    return view('client.home', compact('films'));
+    return view('client.home', compact('film'));
 }
 
     /**
@@ -30,7 +30,9 @@ class FilmController extends Controller
      */
     public function index()
     {
-        //
+        $films = Film::inRandomOrder()->limit(10)->get();
+        $genres = Genre::all();
+        return view('client.home', compact('films','genres'));
     }
   
     /**
