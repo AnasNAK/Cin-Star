@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PdfController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+Route::get('/index', function () {
+    return view('index');
+});
+Route::get('/dash', function () {
+    return view('dash-admin');
+});
+Route::get('/mail', function () {
+    return view('myTestMail');
+});
+
+
+Route::get('/email', [PdfController::class, 'index']);
+
+
+
