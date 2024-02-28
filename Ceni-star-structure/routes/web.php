@@ -21,7 +21,22 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/home', [FilmController::class, 'search'])->name('films.search');
+//------------------------------------------client pages
+Route::get('/home/h', [FilmController::class, 'search'])->name('films.search');
+Route::get('/home/film', [FilmController::class, 'search'])->name('film.show');
+Route::get('/home', [FilmController::class, 'index'])->name('client');
+                        //------------CRUD Actor
+Route::post('dashboard/actors', [ActorController::class, 'store'])->name('actors.store');
+Route::put('dashboard/actors/{id}', [ActorController::class, 'update'])->name('actors.update');
+Route::delete('dashboard/actors/{id}', [ActorController::class, 'destroy'])->name('actors.destroy');
+                        //------------CRUD Genre
+Route::post('dashboard/genres', [GenreController::class, 'store'])->name('Genres.store');
+Route::put('dashboard/genres/{id}', [GenreController::class, 'update'])->name('Genres.update');
+Route::delete('dashboard/genres/{id}', [GenreController::class, 'destroy'])->name('Genres.destroy');
+
+
+
+
 
 Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect']);
 Route::get('/auth/{provider}/callback', [ProviderController::class, 'callback']);
