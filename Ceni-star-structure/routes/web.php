@@ -18,7 +18,10 @@ use App\Http\Controllers\FilmController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/home', [FilmController::class, 'search'])->name('films.search');
+Route::get('/home/h', [FilmController::class, 'search'])->name('films.search');
+Route::get('/home/film', [FilmController::class, 'search'])->name('film.show');
+Route::get('/home', [FilmController::class, 'index'])->name('client');
+
 
 Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect']);
 Route::get('/auth/{provider}/callback', [ProviderController::class, 'callback']);
