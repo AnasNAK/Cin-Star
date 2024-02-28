@@ -4,9 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-
-    "content-hash": "397d601d5c8b20785edf6caae8d59748",
-
+    "content-hash": "2f454a2437bbc2b3c7bd0469f5cde0f7",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -1188,16 +1186,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.45.1",
+            "version": "v10.46.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "dcf5d1d722b84ad38a5e053289130b6962f830bd"
+                "reference": "5e95946a8283a8d5c015035793f9c61c297e937f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/dcf5d1d722b84ad38a5e053289130b6962f830bd",
-                "reference": "dcf5d1d722b84ad38a5e053289130b6962f830bd",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/5e95946a8283a8d5c015035793f9c61c297e937f",
+                "reference": "5e95946a8283a8d5c015035793f9c61c297e937f",
                 "shasum": ""
             },
             "require": {
@@ -1390,20 +1388,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-02-21T14:07:36+00:00"
+            "time": "2024-02-27T16:46:54+00:00"
         },
         {
             "name": "laravel/prompts",
-            "version": "v0.1.15",
+            "version": "v0.1.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/prompts.git",
-                "reference": "d814a27514d99b03c85aa42b22cfd946568636c1"
+                "reference": "ca6872ab6aec3ab61db3a61f83a6caf764ec7781"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/prompts/zipball/d814a27514d99b03c85aa42b22cfd946568636c1",
-                "reference": "d814a27514d99b03c85aa42b22cfd946568636c1",
+                "url": "https://api.github.com/repos/laravel/prompts/zipball/ca6872ab6aec3ab61db3a61f83a6caf764ec7781",
+                "reference": "ca6872ab6aec3ab61db3a61f83a6caf764ec7781",
                 "shasum": ""
             },
             "require": {
@@ -1445,9 +1443,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/prompts/issues",
-                "source": "https://github.com/laravel/prompts/tree/v0.1.15"
+                "source": "https://github.com/laravel/prompts/tree/v0.1.16"
             },
-            "time": "2023-12-29T22:37:42+00:00"
+            "time": "2024-02-21T19:25:27+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -2106,7 +2104,6 @@
             "time": "2024-01-28T23:22:08+00:00"
         },
         {
-
             "name": "league/oauth1-client",
             "version": "v1.10.1",
             "source": {
@@ -2136,22 +2133,17 @@
             },
             "suggest": {
                 "ext-simplexml": "For decoding XML-based responses."
-
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-
                     "dev-master": "1.0-dev",
                     "dev-develop": "2.0-dev"
-
                 }
             },
             "autoload": {
                 "psr-4": {
-
                     "League\\OAuth1\\Client\\": "src/"
-
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2160,7 +2152,6 @@
             ],
             "authors": [
                 {
-
                     "name": "Ben Corlett",
                     "email": "bencorlett@me.com",
                     "homepage": "http://www.webcomm.com.au",
@@ -2187,7 +2178,73 @@
                 "source": "https://github.com/thephpleague/oauth1-client/tree/v1.10.1"
             },
             "time": "2022-04-15T14:02:14+00:00"
-
+        },
+        {
+            "name": "masterminds/html5",
+            "version": "2.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Masterminds/html5-php.git",
+                "reference": "f47dcf3c70c584de14f21143c55d9939631bc6cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Masterminds/html5-php/zipball/f47dcf3c70c584de14f21143c55d9939631bc6cf",
+                "reference": "f47dcf3c70c584de14f21143c55d9939631bc6cf",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7.21 || ^6 || ^7 || ^8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Masterminds\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Butcher",
+                    "email": "technosophos@gmail.com"
+                },
+                {
+                    "name": "Matt Farina",
+                    "email": "matt@mattfarina.com"
+                },
+                {
+                    "name": "Asmir Mustafic",
+                    "email": "goetas@gmail.com"
+                }
+            ],
+            "description": "An HTML5 parser and serializer.",
+            "homepage": "http://masterminds.github.io/html5-php",
+            "keywords": [
+                "HTML5",
+                "dom",
+                "html",
+                "parser",
+                "querypath",
+                "serializer",
+                "xml"
+            ],
+            "support": {
+                "issues": "https://github.com/Masterminds/html5-php/issues",
+                "source": "https://github.com/Masterminds/html5-php/tree/2.8.1"
+            },
+            "time": "2023-05-10T11:58:31+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3571,92 +3628,8 @@
             "time": "2023-11-08T05:53:05+00:00"
         },
         {
-
-            "name": "spatie/laravel-permission",
-            "version": "6.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-permission.git",
-                "reference": "4d119986c862ac0168b77338c85d8236bb559a88"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/4d119986c862ac0168b77338c85d8236bb559a88",
-                "reference": "4d119986c862ac0168b77338c85d8236bb559a88",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/auth": "^8.12|^9.0|^10.0|^11.0",
-                "illuminate/container": "^8.12|^9.0|^10.0|^11.0",
-                "illuminate/contracts": "^8.12|^9.0|^10.0|^11.0",
-                "illuminate/database": "^8.12|^9.0|^10.0|^11.0",
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "laravel/passport": "^11.0",
-                "orchestra/testbench": "^6.23|^7.0|^8.0|^9.0",
-                "phpunit/phpunit": "^9.4|^10.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "6.x-dev",
-                    "dev-master": "6.x-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Spatie\\Permission\\PermissionServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "Spatie\\Permission\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Permission handling for Laravel 8.0 and up",
-            "homepage": "https://github.com/spatie/laravel-permission",
-            "keywords": [
-                "acl",
-                "laravel",
-                "permission",
-                "permissions",
-                "rbac",
-                "roles",
-                "security",
-                "spatie"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/laravel-permission/issues",
-                "source": "https://github.com/spatie/laravel-permission/tree/6.3.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/spatie",
-                    "type": "github"
-                }
-            ],
-            "time": "2023-12-24T06:58:02+00:00"
-        },
-        {
-            "name": "symfony/console",
-            "version": "v6.4.3",
-
+            "name": "sabberworm/php-css-parser",
+            "version": "v8.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MyIntervals/PHP-CSS-Parser.git",
@@ -3718,6 +3691,88 @@
                 "source": "https://github.com/MyIntervals/PHP-CSS-Parser/tree/v8.5.1"
             },
             "time": "2024-02-15T16:41:13+00:00"
+        },
+        {
+            "name": "spatie/laravel-permission",
+            "version": "6.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-permission.git",
+                "reference": "05cce017fe3ac78f60a3fce78c07fe6e8e6e6e52"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/05cce017fe3ac78f60a3fce78c07fe6e8e6e6e52",
+                "reference": "05cce017fe3ac78f60a3fce78c07fe6e8e6e6e52",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "^8.12|^9.0|^10.0|^11.0",
+                "illuminate/container": "^8.12|^9.0|^10.0|^11.0",
+                "illuminate/contracts": "^8.12|^9.0|^10.0|^11.0",
+                "illuminate/database": "^8.12|^9.0|^10.0|^11.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "laravel/passport": "^11.0|^12.0",
+                "orchestra/testbench": "^6.23|^7.0|^8.0|^9.0",
+                "phpunit/phpunit": "^9.4|^10.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "6.x-dev",
+                    "dev-master": "6.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Permission\\PermissionServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Spatie\\Permission\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Permission handling for Laravel 8.0 and up",
+            "homepage": "https://github.com/spatie/laravel-permission",
+            "keywords": [
+                "acl",
+                "laravel",
+                "permission",
+                "permissions",
+                "rbac",
+                "roles",
+                "security",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-permission/issues",
+                "source": "https://github.com/spatie/laravel-permission/tree/6.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-02-28T08:11:20+00:00"
         },
         {
             "name": "symfony/console",
@@ -6407,16 +6462,16 @@
         },
         {
             "name": "laravel/breeze",
-            "version": "v1.28.3",
+            "version": "v1.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/breeze.git",
-                "reference": "c8bd0a8557aa2b0597bae762d9926b819d886419"
+                "reference": "f4c4cb2197cd96a3d8a913c7b8437291d8bde5af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/breeze/zipball/c8bd0a8557aa2b0597bae762d9926b819d886419",
-                "reference": "c8bd0a8557aa2b0597bae762d9926b819d886419",
+                "url": "https://api.github.com/repos/laravel/breeze/zipball/f4c4cb2197cd96a3d8a913c7b8437291d8bde5af",
+                "reference": "f4c4cb2197cd96a3d8a913c7b8437291d8bde5af",
                 "shasum": ""
             },
             "require": {
@@ -6465,7 +6520,7 @@
                 "issues": "https://github.com/laravel/breeze/issues",
                 "source": "https://github.com/laravel/breeze"
             },
-            "time": "2024-02-19T02:47:27+00:00"
+            "time": "2024-02-21T14:14:23+00:00"
         },
         {
             "name": "laravel/pint",
@@ -6535,16 +6590,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.28.0",
+            "version": "v1.28.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "a05861ca9b04558b1ec1f36cff521a271a259b6c"
+                "reference": "f84e444a3dbc1811803cd2a050bdd54ff6f5eef8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/a05861ca9b04558b1ec1f36cff521a271a259b6c",
-                "reference": "a05861ca9b04558b1ec1f36cff521a271a259b6c",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/f84e444a3dbc1811803cd2a050bdd54ff6f5eef8",
+                "reference": "f84e444a3dbc1811803cd2a050bdd54ff6f5eef8",
                 "shasum": ""
             },
             "require": {
@@ -6593,7 +6648,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2024-02-20T15:11:00+00:00"
+            "time": "2024-02-23T00:24:47+00:00"
         },
         {
             "name": "mockery/mockery",

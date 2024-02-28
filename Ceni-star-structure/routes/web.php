@@ -17,8 +17,9 @@ use App\Http\Controllers\PdfController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+
+Route::get('/ticket', function () {
+    return view('ticket');
 });
 
 Route::get('/home', [FilmController::class, 'search'])->name('films.search');
