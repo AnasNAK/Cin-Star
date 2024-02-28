@@ -26,9 +26,12 @@ class ActorController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ActorRequest $request)
     {
-        //
+        $genre = Actor::create([
+            'name' => $request->input('actor'),
+        ]);
+       return redirect()->back()->with('success', 'Actor added successful!');
     }
 
     /**
@@ -50,16 +53,27 @@ class ActorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, actor $actor)
-    {
-        //
+    public function update(ActorRequest $request, $id)
+    {   
+        $actor = Actor::findOrFail($id);
+       
+        $actor->update([
+            'name' => $request->input('actor'),
+        ]);
+    
+        return redirect()->back()->with('success', 'Actor updated successfully!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(actor $actor)
+    public function destroy($id)
     {
-        //
+        
+        $actor = Actor::findOrFail($id);
+
+        $actor->delete();
+
+        return redirect()->back()->with('success', 'Actor deleted successfully!');
     }
 }

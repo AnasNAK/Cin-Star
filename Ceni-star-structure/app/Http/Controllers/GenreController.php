@@ -35,9 +35,12 @@ class GenreController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(GenreRequest $request)
     {
-        //
+        $genre = Genre::create([
+            'name' => $request->input('genre'),
+        ]);
+        redirect()->back()->with('success', 'Genre added successful!');
     }
 
     /**

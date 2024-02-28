@@ -1,9 +1,9 @@
 <!-- component -->
-<body class="bg-blue-500">
-	<nav class="relative px-4 py-4 flex justify-between items-center bg-white">	
+
+	<nav class="relative flex justify-between items-center bg-white">	
 		<div class="flex space-x-10">
 		<a class="text-3xl font-bold leading-none" href="{{route('client')}}">
-		<img src="{{asset('imgs/logo.png')}}" class="h-28">
+		<img src="{{asset('imgs/logo.png')}}" class="h-20">
 		</a>
 		<div class='flex items-center justify-center  '>
 			<form action="{{route('films.search')}}"  method="GET"  class="relative mx-auto flex">
@@ -62,7 +62,7 @@
 			</div>
 		</nav>
 	</div>
-</body>
+
 
 <script>
 // Burger menus
