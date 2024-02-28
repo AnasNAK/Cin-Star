@@ -38,5 +38,6 @@ class DatabaseSeeder extends Seeder
             'salle_id' => 1,
         ]);
     
+        $this->call(RoleSeeder::class);
     }
 }

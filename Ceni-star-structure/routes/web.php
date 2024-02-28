@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\ProviderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FilmController;
+use App\Http\Controllers\ActorController;
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\PdfController;
 
 /*
@@ -37,6 +39,13 @@ Route::delete('dashboard/genres/{id}', [GenreController::class, 'destroy'])->nam
 
 
 
+Route::get('/admin', function () {
+    return view('admin.dashboard');
+});
+
+Route::get('/home', function () {
+    return view('client.home');
+});
 
 Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect']);
 Route::get('/auth/{provider}/callback', [ProviderController::class, 'callback']);
