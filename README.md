@@ -21,6 +21,6 @@ _Other Tools:_ Docker
 
 - [Youssef Hihi](https://github.com/youssefhihi)
 - [AnasNAK](https://github.com/AnasNAK)
-- [Youssef Hihi](https://github.com/youssefhihi)
-- [Youssef Hihi](https://github.com/youssefhihi)
-- [Youssef Hihi](https://github.com/youssefhihi)
+- [MesVortex](https://github.com/MesVortex)
+- [OUMAIMAtakrour](https://github.com/OUMAIMAtakrour)
+
