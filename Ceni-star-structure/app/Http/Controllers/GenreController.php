@@ -3,25 +3,28 @@
 namespace App\Http\Controllers;
 
 use App\Models\genre;
+
+use App\Models\Film;
 use Illuminate\Http\Request;
+use App\Http\Requests\GenreRequest;
 
 class GenreController extends Controller
 {
 
-    public function filterFilms(Genre $genre) {
-        $films = Film::whereHas('genre', function($query) use ($genre) {
+    public function filterFilms(Genre $genre)
+    {
+        $films = Film::whereHas('genre', function ($query) use ($genre) {
             $query->where('id', $genre->id);
         })->get();
-    
+
         return view('client.home', compact('films'));
     }
-    
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        
     }
 
     /**

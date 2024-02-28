@@ -13,25 +13,26 @@ class MailExample extends Mailable
 {
     use Queueable, SerializesModels;
 
-    
+
     public $subject;
     public $body;
-    
 
 
-public function __construct($subject, $body){
-    $this->subject = $subject;
-    $this->body = $body;
-}
+
+    public function __construct($subject, $body)
+    {
+        $this->subject = $subject;
+        $this->body = $body;
+    }
 
     public function build()
 
     {
         return $this->subject($this->subject)
-                    ->view('email')
-                    ->with([
-                        'body' => $this->body,
-                        
-                    ]);
+            ->view('email')
+            ->with([
+                'body' => $this->body,
+
+            ]);
     }
 }

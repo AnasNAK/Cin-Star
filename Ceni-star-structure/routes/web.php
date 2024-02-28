@@ -1,10 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PdfController;
+use App\Http\Controllers\FilmController;
+use App\Http\Controllers\ActorController;
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\ProviderController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FilmController;
-use App\Http\Controllers\PdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,21 +23,26 @@ use App\Http\Controllers\PdfController;
 Route::get('/ticket', function () {
     return view('ticket');
 });
-
-//------------------------------------------client pages
-Route::get('/home/h', [FilmController::class, 'search'])->name('films.search');
-Route::get('/home/film', [FilmController::class, 'search'])->name('film.show');
-Route::get('/home', [FilmController::class, 'index'])->name('client');
-                        //------------CRUD Actor
-Route::post('dashboard/actors', [ActorController::class, 'store'])->name('actors.store');
-Route::put('dashboard/actors/{id}', [ActorController::class, 'update'])->name('actors.update');
-Route::delete('dashboard/actors/{id}', [ActorController::class, 'destroy'])->name('actors.destroy');
-                        //------------CRUD Genre
-Route::post('dashboard/genres', [GenreController::class, 'store'])->name('Genres.store');
-Route::put('dashboard/genres/{id}', [GenreController::class, 'update'])->name('Genres.update');
-Route::delete('dashboard/genres/{id}', [GenreController::class, 'destroy'])->name('Genres.destroy');
+Route::get('/', function () {
+    return view('index');
+});
 
 
+Route::middleware('auth')->group(function () {
+
+    //------------------------------------------client pages
+    Route::get('/home/h', [FilmController::class, 'search'])->name('films.search');
+    Route::get('/home/film', [FilmController::class, 'search'])->name('film.show');
+    Route::get('/home', [FilmController::class, 'index'])->name('client');
+    //------------CRUD Actor
+    Route::post('dashboard/actors', [ActorController::class, 'store'])->name('actors.store');
+    Route::put('dashboard/actors/{id}', [ActorController::class, 'update'])->name('actors.update');
+    Route::delete('dashboard/actors/{id}', [ActorController::class, 'destroy'])->name('actors.destroy');
+    //------------CRUD Genre
+    Route::post('dashboard/genres', [GenreController::class, 'store'])->name('Genres.store');
+    Route::put('dashboard/genres/{id}', [GenreController::class, 'update'])->name('Genres.update');
+    Route::delete('dashboard/genres/{id}', [GenreController::class, 'destroy'])->name('Genres.destroy');
+});
 
 
 
