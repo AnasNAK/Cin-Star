@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
+    /**s
      * Run the migrations.
      */
     public function up(): void
@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('salles', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-           $table->timestamps();
+            $table->timestamps();
         });
     }
 
