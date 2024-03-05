@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\Film;
 use App\Models\Genre;
+use App\Models\Actor;
+use App\Models\Salle;
 use Illuminate\Http\Request;
 
 class FilmController extends Controller
@@ -49,6 +51,15 @@ class FilmController extends Controller
         $genres = Genre::all();
         return view('client.home', compact('films','genres'));
     }
+
+    public function filmDashboard()
+    {
+        $films = Film::with('genre', 'salle', 'actor');
+        $genres = Genre::all();
+        $actors = Actor::all();
+        $salles = Salle::all();
+        return view('admin.films', compact('films', 'genres', 'actors', 'salles'));
+    }
   
     /**
      * Show the form for creating a new resource.
@@ -63,7 +74,24 @@ class FilmController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'movieName' => ['required', 'string', 'max:255'],
+            'broadcatsingHour' => ['required', 'string'],
+            'genre' => ['required'],
+            'salle' => ['required'],
+        ]);
+
+        $newFilm = Film::create([
+            'name' => $validatedData['movieName'],
+            'hour' => $validatedData['broadcatsingHour'],
+            'genre_id' => $validatedData['genre'],
+            'salle_id' => $validatedData['salle'],
+        ]);
+
+        $newFilm->actor()->attach($request->actors);
+
+        return redirect()->back()->with('success', 'film added successfully!');
+
     }
 
     /**

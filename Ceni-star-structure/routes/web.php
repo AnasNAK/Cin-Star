@@ -24,15 +24,29 @@ Route::get('/ticket', function () {
     return view('ticket');
 });
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 //------------------------------------------client pages
-Route::get('/home/h', [FilmController::class, 'search'])->name('films.search');
+Route::get('/home/search', [FilmController::class, 'search'])->name('films.search');
 Route::get('/home/film', [FilmController::class, 'search'])->name('film.show');
 Route::get('/home', [FilmController::class, 'index'])->name('client');
-                        //------------CRUD Actor
+
+//------------------------------------------admin pages
+Route::get('/admin/dashboard/films', [FilmController::class, 'filmDashboard'])->name('admin.films');
+
+//------------CRUD Film
+Route::post('/admin/dashboard/movie/add', [FilmController::class, 'store'])->name('movie.store');
+Route::put('/admin/dashboard/{movie}/update', [FilmController::class, 'update'])->name('movie.update');
+Route::delete('/admin/dashboard/{movie}/archive', [FilmController::class, 'destroy'])->name('movie.archive');
+
+//------------CRUD Actor
 Route::post('dashboard/actors', [ActorController::class, 'store'])->name('actors.store');
 Route::put('dashboard/actors/{id}', [ActorController::class, 'update'])->name('actors.update');
 Route::delete('dashboard/actors/{id}', [ActorController::class, 'destroy'])->name('actors.destroy');
-                        //------------CRUD Genre
+
+//------------CRUD Genre
 Route::post('dashboard/genres', [GenreController::class, 'store'])->name('Genres.store');
 Route::put('dashboard/genres/{id}', [GenreController::class, 'update'])->name('Genres.update');
 Route::delete('dashboard/genres/{id}', [GenreController::class, 'destroy'])->name('Genres.destroy');
@@ -44,9 +58,6 @@ Route::get('/admin', function () {
     return view('admin.dashboard');
 });
 
-Route::get('/home', function () {
-    return view('client.home');
-});
 
 Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect']);
 Route::get('/auth/{provider}/callback', [ProviderController::class, 'callback']);
