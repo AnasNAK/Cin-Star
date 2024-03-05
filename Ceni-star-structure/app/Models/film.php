@@ -30,6 +30,6 @@ class Film extends Model
 
     public function salle()
     {
-        return $this->belongsTo(Salle::class,'salle_id');
+        return $this->belongsTo(salle::class,'salle_id');
     }
 }

@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Auth\ProviderController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PdfController;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\ActorController;
 use App\Http\Controllers\GenreController;
-use App\Http\Controllers\PdfController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\Auth\ProviderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,13 @@ Route::put('/admin/dashboard/{movie}/update', [FilmController::class, 'update'])
 Route::delete('/admin/dashboard/{movie}/archive', [FilmController::class, 'destroy'])->name('movie.archive');
 
 //------------CRUD Actor
+// Route::get('/home/film', [FilmController::class, 'search'])->name('film.show');
+
+Route::get('/reservation/{film}', [ReservationController::class, 'show'])->name('film.show');
+Route::post('/reserve-chair/{chairId}', [ReservationController::class, 'reserve'])->name('reserve-chair');
+
+
+                        //-----------CRUD Actor
 Route::post('dashboard/actors', [ActorController::class, 'store'])->name('actors.store');
 Route::put('dashboard/actors/{id}', [ActorController::class, 'update'])->name('actors.update');
 Route::delete('dashboard/actors/{id}', [ActorController::class, 'destroy'])->name('actors.destroy');

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\film;
+use App\Models\chairs;
 use App\Models\reservation;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class ReservationController extends Controller
 {
     /**
@@ -34,10 +36,42 @@ class ReservationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(reservation $reservation)
+    public function show(film $film)
     {
-        //
+        try {
+            $salle = $film->salle;
+            $chairs = $salle->chairs()->with('reservations')->get();
+            return view('client.reservation', compact('film', 'salle', 'chairs'));
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }
     }
+
+
+
+
+public function reserve(Request $request, $chairId)
+{
+    $filmId = $request->input('film_id');
+
+    $userId = Auth::id();
+
+    $reservation = new Reservation();
+    $reservation->film_id = $filmId; 
+    $reservation->chair_id = $chairId;
+    $reservation->user_id = $userId; 
+
+    $chair = chairs::find($chairId);
+    $chair->status = 1; 
+
+    $reservation->save();
+    $chair->save();
+
+   
+    return redirect()->back()->with('success', 'Chair reserved successfully!');
+}
+
+    
 
     /**
      * Show the form for editing the specified resource.
