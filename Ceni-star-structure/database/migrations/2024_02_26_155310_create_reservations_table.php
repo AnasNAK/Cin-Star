@@ -17,6 +17,8 @@ return new class extends Migration
             $table->foreign('film_id')->references('id')->on('films')->onDelete('cascade');  
             $table->unsignedBigInteger('chair_id');
             $table->foreign('chair_id')->references('id')->on('chairs')->onDelete('cascade'); 
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); 
             $table->timestamps();
         });
     }

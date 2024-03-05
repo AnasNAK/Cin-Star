@@ -1,10 +1,13 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Auth\ProviderController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FilmController;
 use App\Http\Controllers\PdfController;
+use App\Http\Controllers\FilmController;
+use App\Http\Controllers\ActorController;
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\Auth\ProviderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +26,14 @@ Route::get('/', function () {
 
 //------------------------------------------client pages
 Route::get('/home/h', [FilmController::class, 'search'])->name('films.search');
-Route::get('/home/film', [FilmController::class, 'search'])->name('film.show');
+// Route::get('/home/film', [FilmController::class, 'search'])->name('film.show');
 Route::get('/home', [FilmController::class, 'index'])->name('client');
-                        //------------CRUD Actor
+
+Route::get('/reservation/{film}', [ReservationController::class, 'show'])->name('film.show');
+Route::post('/reserve-chair/{chairId}', [ReservationController::class, 'reserve'])->name('reserve-chair');
+
+
+                        //-----------CRUD Actor
 Route::post('dashboard/actors', [ActorController::class, 'store'])->name('actors.store');
 Route::put('dashboard/actors/{id}', [ActorController::class, 'update'])->name('actors.update');
 Route::delete('dashboard/actors/{id}', [ActorController::class, 'destroy'])->name('actors.destroy');

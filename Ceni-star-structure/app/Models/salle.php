@@ -12,8 +12,13 @@ class Salle extends Model
 
 
 
-    public function film()
+    public function films()
     {
-        return $this->hasMany(Film::class,'salle_id');
+        return $this->hasMany(film::class);
+    }
+
+    public function chairs()
+    {
+        return $this->hasMany(chairs::class);
     }
 }
