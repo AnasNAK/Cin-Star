@@ -9,7 +9,13 @@ class Film extends Model
 {
     use HasFactory;
 
-
+    protected $fillable = [
+        'name',
+        'hour',
+        'genre_id',
+        'actor_id',
+        'salle_id',
+    ];
 
 
     public function genre()
@@ -19,7 +25,7 @@ class Film extends Model
 
     public function actor()
     {
-        return $this->belongsTo(Actor::class,'actor_id');
+        return $this->hasMany(Actor::class,'film_id');
     }
 
     public function salle()
